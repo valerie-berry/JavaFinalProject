@@ -10,6 +10,8 @@ public class Deck {
 	List cards = new ArrayList<Card>();
 
 	public Deck() {
+		
+		// A hasthable to pair each number with it's spelling
 		Hashtable<Integer, String> numsToWords = new Hashtable<Integer, String>();
 		numsToWords.put(2, "Two");
 		numsToWords.put(3, "Three");
@@ -25,12 +27,15 @@ public class Deck {
 		numsToWords.put(13, "King");
 		numsToWords.put(14, "Ace");
 
+		// An ArrayList to list all suits
 		List<String> suits = new ArrayList<String>();
 		suits.add("Spades");
 		suits.add("Hearts");
 		suits.add("Clubs");
 		suits.add("Diamonds");
 
+		// Outer loop goes through each card number
+		// Inner loop goes through each suit
 		for (int i = 2; i <= 14; i++) {
 			for (String suit : suits) {
 				String numName = numsToWords.get(i);

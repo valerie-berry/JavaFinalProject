@@ -15,6 +15,9 @@ public class App {
 		player1.score = 0;
 		player2.score = 0;
 
+		// Drawing cards from the deck
+		// (player 1 draws on odds, player 2
+		// draws on evens)
 		for (int i = 0; i <= 51; i++) {
 			if (i % 2 == 0) {
 				player1.draw(gameDeck);
@@ -22,6 +25,8 @@ public class App {
 				player2.draw(gameDeck);
 			}
 		}
+		
+		// Gameplay
 		for (int j = 0; j <= 25; j++) {
 			Card p1Card = player1.flip();
 			Card p2Card = player2.flip();
@@ -42,10 +47,15 @@ public class App {
 				player2.incrementScore();
 				System.out.println("[Player2 gets this point]");
 			}
+			
+			// If it's a draw, nothing happens
+			
 			System.out.println("[Player1 score: " + player1.score + "]");
 			System.out.println("[Player2 score: " + player2.score + "]");
 			System.out.println();
-		}
+		} // end of game
+		
+		
 		System.out.println("Player 1: " + player1.score);
 		System.out.println("Player 2: " + player2.score);
 		
